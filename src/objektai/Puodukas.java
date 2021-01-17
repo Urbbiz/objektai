@@ -4,8 +4,8 @@ package objektai;
 public class Puodukas {
     
     private char spalva;
-    private int turis;
-    private int kiekis;
+    protected int turis;
+    protected int kiekis;
     
     public Puodukas(char spalva, int turis) {
     this.spalva = spalva;
@@ -32,6 +32,9 @@ public class Puodukas {
     }
     
     public void ipilk(int kiek) {
+        if (kiek <= 0) {
+        return;
+        }
         this.kiekis += kiek;
         if (this.kiekis > this.turis){
             this.kiekis = this.turis;
